@@ -4,7 +4,7 @@ import GifSearch from "../components/GifSearch";
 
 export default class GifListContainer extends Component {
   state = {
-    gifObj: []
+    gifObjs: []
   };
 
   componentDidMount() {
@@ -20,7 +20,7 @@ export default class GifListContainer extends Component {
       .then(resp => resp.json())
       .then(data => {
         this.setState({
-          gifObj: data.data
+          gifObjs: data.data
         });
       });
   };
@@ -28,7 +28,7 @@ export default class GifListContainer extends Component {
   render() {
     return (
       <div>
-        <GifList state={this.state} />
+        <GifList state={this.state.gifObjs} />
         <GifSearch handleSubmit={this.fetchGifObjs} />
       </div>
     );
