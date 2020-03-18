@@ -22,9 +22,9 @@ export default class GifListContainer extends Component {
         this.setState({
           gifObjs:
             json.data &&
-            json.data.map(gif => ({
-              url: gif.images.original.url,
-              title: gif.title
+            json.data.map(gifObj => ({
+              url: gifObj.images.original.url,
+              title: gifObj.title
             }))
         });
       });
