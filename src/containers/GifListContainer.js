@@ -18,11 +18,11 @@ export default class GifListContainer extends Component {
         "&api_key=dc6zaTOxFJmzC&rating=g&limit=3"
     )
       .then(resp => resp.json())
-      .then(data => {
+      .then(json => {
         this.setState({
           gifObjs:
-            data.data &&
-            data.data.map(gif => ({
+            json.data &&
+            json.data.map(gif => ({
               url: gif.images.original.url,
               title: gif.title
             }))
