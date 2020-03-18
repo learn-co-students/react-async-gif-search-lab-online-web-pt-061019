@@ -15,7 +15,7 @@ export default class GifListContainer extends Component {
     fetch(
       "https://api.giphy.com/v1/gifs/search?q=" +
         query +
-        "&api_key=dc6zaTOxFJmzC&rating=g"
+        "&api_key=dc6zaTOxFJmzC&rating=g/?_limit=3"
     )
       .then(resp => resp.json())
       .then(data => {
