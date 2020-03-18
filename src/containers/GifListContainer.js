@@ -28,7 +28,7 @@ export default class GifListContainer extends Component {
   render() {
     return (
       <div>
-        <GifList state={this.state.gifObjs} />
+        <GifList gifObjs={this.state.gifObjs} />
         <GifSearch handleSubmit={this.fetchGifObjs} />
       </div>
     );
