@@ -19,10 +19,13 @@ export default class GifListContainer extends Component {
       });
   }
 
+  handleSubmit = () => {};
+
   render() {
     return (
       <div>
         <GifList state={this.state} />
+        <GifSearch handleSubmit={this.handleSubmit} />
       </div>
     );
   }
