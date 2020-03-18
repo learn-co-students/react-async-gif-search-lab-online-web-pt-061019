@@ -8,8 +8,12 @@ export default class GifListContainer extends Component {
   };
 
   componentDidMount() {
+    this.fetchGifObjs();
+  }
+
+  fetchGifObjs = query => {
     fetch(
-      "https://api.giphy.com/v1/gifs/search?q=YOUR QUERY HERE&api_key=dc6zaTOxFJmzC&rating=g"
+      "https://api.giphy.com/v1/gifs/search?q=' + query + '&api_key=dc6zaTOxFJmzC&rating=g"
     )
       .then(resp => resp.json())
       .then(data => {
@@ -17,9 +21,11 @@ export default class GifListContainer extends Component {
           gifObj: data.data
         });
       });
-  }
+  };
 
-  handleSubmit = () => {};
+  handleSubmit = () => {
+    this.fetchGifObjs();
+  };
 
   render() {
     return (
