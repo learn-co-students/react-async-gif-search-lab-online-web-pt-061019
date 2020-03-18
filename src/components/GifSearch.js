@@ -7,9 +7,10 @@ export default class GifSearch extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    this.props.fetchGifObjs(this.state.query);
   };
 
-  onChange = event => {
+  handleInput = event => {
     this.setState({
       query: event.target.value
     });
@@ -24,7 +25,7 @@ export default class GifSearch extends Component {
             onChange={this.handleInput}
             value={this.state.query}
           ></input>
-          <button type="submit">Search</button>
+          <input type="submit" value="Search"></input>
         </form>
       </div>
     );

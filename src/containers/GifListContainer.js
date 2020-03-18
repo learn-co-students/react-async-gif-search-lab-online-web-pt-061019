@@ -15,12 +15,17 @@ export default class GifListContainer extends Component {
     fetch(
       "https://api.giphy.com/v1/gifs/search?q=" +
         query +
-        "&api_key=dc6zaTOxFJmzC&rating=g/?_limit=3"
+        "&api_key=dc6zaTOxFJmzC&rating=g&limit=3"
     )
       .then(resp => resp.json())
       .then(data => {
         this.setState({
-          gifObjs: data.data
+          gifObjs:
+            data.data &&
+            data.data.map(gif => ({
+              url: gif.images.original.url,
+              title: gif.title
+            }))
         });
       });
   };
@@ -29,7 +34,7 @@ export default class GifListContainer extends Component {
     return (
       <div>
         <GifList gifObjs={this.state.gifObjs} />
-        <GifSearch handleSubmit={this.fetchGifObjs} />
+        <GifSearch fetchGifObjs={this.fetchGifObjs} />
       </div>
     );
   }
