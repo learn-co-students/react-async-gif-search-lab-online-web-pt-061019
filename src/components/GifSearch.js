@@ -24,6 +24,7 @@ export default class GifSearch extends Component {
             onChange={this.handleInput}
             value={this.state.query}
           ></input>
+          <button type="submit">Search</button>
         </form>
       </div>
     );
