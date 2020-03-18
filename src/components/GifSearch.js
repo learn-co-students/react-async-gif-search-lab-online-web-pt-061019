@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 
 export default class GifSearch extends Component {
-    state = {
-        query: ""
-    }
+  state = {
+    query: ""
+  };
 
-    render() {
-        return(
-
-        )
-    }
+  render() {
+    return (
+      <div>
+        <form onSubmit={this.handleSubmit}></form>
+      </div>
+    );
+  }
 }
