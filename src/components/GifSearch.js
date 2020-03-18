@@ -5,10 +5,20 @@ export default class GifSearch extends Component {
     query: ""
   };
 
+  handleSubmit = event => {
+    event.preventDefault();
+  };
+
+  onChange = event => {
+    this.setState();
+  };
+
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}></form>
+        <form onSubmit={this.handleSubmit}>
+          <input type="text" onChange={this.handleInput}></input>
+        </form>
       </div>
     );
   }
