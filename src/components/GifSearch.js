@@ -10,8 +10,6 @@ class GifSearch extends Component {
 
   //   handleSubmit = (event) => {
   //     event.preventdefault();
-  //     // console.log(event);
-  //     debugger;
   //     this.props.handleSearch(event);
   //   };
 
