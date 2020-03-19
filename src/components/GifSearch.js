@@ -13,9 +13,9 @@ export default class GifSearch extends Component {
   render() {
     return (
       <div>
-        <h4>Enter a Search Term:</h4>
-        <form onSubmit={this.handleSubmit}>
-           <input type='text' value={this.state.query} 
+        <p className="gifSearch">Enter a Search Term:</p>
+        <form className="gifSearch"  onSubmit={this.handleSubmit}>
+           <input type='text' placeholder="Search.." value={this.state.query} 
               onChange= {e => this.setState({query: e.target.value})} />
           <input type='submit' value='Find Gifs' />
         </form>

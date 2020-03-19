@@ -1,0 +1,14 @@
+.gifSearch {
+  /* position: relative;
+  left: 30px; */
+  margin-left: 30px;
+}
+
+input[type=submit]{
+  background-color: aquamarine;
+  border: none;
+  color: gray;
+  padding: 3px;
+  text-decoration: none;
+  margin: 4px;
+}
