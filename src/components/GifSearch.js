@@ -11,6 +11,7 @@ export default class GifSearch extends Component {
   };
 
   handleInput = event => {
+    event.persist();
     this.setState({
       query: event.target.value
     });
