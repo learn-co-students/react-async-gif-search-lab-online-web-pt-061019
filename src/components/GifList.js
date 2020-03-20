@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 
 export class GifList extends Component {
   renderGifs = () => {
-    this.props.gifs.data.map(gif => {
-      return <li>{gif.id}</li>
-    })
-    // console.log(this.props.gifs.data)
-    // return <li>Test gif!</li>
-
-    return <li>Test Gif!</li>
+    let allGifs = ""
+    if (this.props.gifs && this.props.gifs.map) {
+      allGifs = this.props.gifs.map(gif => {
+        return <li><img src={gif.url} alt="gif"/></li>
+      })
+    }
+    return allGifs
+    console.log(this.props)
   }
 
   render() {
