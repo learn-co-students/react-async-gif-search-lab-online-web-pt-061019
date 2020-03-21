@@ -8,7 +8,7 @@ export default class GifListContainer extends Component{
     }
    
     handleFetch = (query) => {
-        fetch(`https://api.giphy.com/v1/gifs/search?q=${query}&api_key=5rBNpQQUbTiFNvMbd4tY23MWt6szb0rh&rating=g`)
+        fetch(`https://api.giphy.com/v1/gifs/search?q=${query}&api_key=5rBNpQQUbTiFNvMbd4tY23MWt6szb0rh&rating=g&limit=3`)
         .then(resp => resp.json())
         .then(({data}) => {
          this.setState({
